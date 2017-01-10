@@ -1,0 +1,20 @@
+{   
+	"root":
+    "extends": "airbnb",
+	"env":{
+	"es6":true
+	},
+	"plugins":{
+	"react",
+	"jsx-ally",
+	"import"
+	},
+	"rules":{
+	semi: 0,// 忽略分号警告,代码中无分号
+	comma-dangle:0, // 逗号缺失警告关掉
+	quotes:["error","single",{"allowTemplateLiterals":true}], // 同时允许单引号''和``
+	import/no-extraneous-dependencies: ["error", {"devDependencies": true}], # 规则是禁止外部包使用,这里不禁止dev的
+
+
+	}
+}

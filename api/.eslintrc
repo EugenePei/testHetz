@@ -1,0 +1,25 @@
+{   
+    "extends": "../.eslintrc",
+	"env":{
+	"es6":true
+	"node":true
+	},
+	"plugins":{
+	"import"
+	},
+	"rules":{
+	no-unused-vars:1,   #参数没使用警告不要报错
+	no-console:["error",{allow:["log","info","warn","error"] }], # 规则不许使用console.log这些，
+	no-param-reassign:0, # 防止参数意外赋值
+	new-cap:["error",{"capIsNew":false,"newIsCap":false}], # 构造函数不强制要求大写
+	prefer-const: 1,  # 未改变的变量要求使用 const 关键字的错误警告改为提示警告
+    # key-spacing: ["error", {"align": "value", "beforeColon": false, "afterColon": true}],  # 强制要求多列空格对齐
+    no-mixed-operators:0, #规则为算术式不大括号要报错，但有些不太明显得算术式都打括号显得乱
+    no-prototype-builtins:0,    # 这条规则不允许直接在对象实例上调用 Object.prototype 的一些方法。hasOwnProperty不能用，但暂时没有更优雅的替代写法
+    no-array-constructor:0 ,  # 该规则创建数组的时候必须new Array(n)指定数组长度
+
+
+	import/imports-first:0, #import导入时 后边得require 不需要报警
+
+	}
+}

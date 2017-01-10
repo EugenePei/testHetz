@@ -17,6 +17,9 @@ require('./server/api-express')(app, env, config)
 
 require('./server/api-routes')(app, express)
 
+
+// 127.0.0.1限制本机访问，用于生产环境仅允许域名访问nginx跳转
+// 要注意用手机调试时去掉
 http.createServer(app).listen(apiport,'127.0.0.1',(err)=>{
   console.info(`==> 🌐  ${config.name} Server started on port ${apiport}, env=${env}`)
 })

@@ -12,7 +12,7 @@ import redis from 'connect-redis'
 // import favcon from 'serve-favicon'
 // // import serveStatic from 'serve-static' // URL地址与服务器地址映射
 
- import cacheutility from '../src/common/cacheutility'
+ import sessionUtility from '../src/common/sessionUtility'
 
 module.exports = (app,env,config)=>{
 
@@ -22,7 +22,8 @@ module.exports = (app,env,config)=>{
 	app.set('trust proxy', 1)
 
   /**
-   * 用户session存到Redis服务
+   * * 生成session，并且把redis配置也放到session里
+
    */
 	const RedisStore = redis(session)
 	const sessionConfig ={
@@ -35,7 +36,7 @@ module.exports = (app,env,config)=>{
 	}
 	if(config.redis){
 		sessionConfig.store= new RedisStore({
-			client:cacheutility.getRedis()
+			client:sessionUtility.getRedis()
 		})
 	}
 	app.use(session(sessionConfig))

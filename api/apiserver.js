@@ -15,7 +15,7 @@ app.set('port',apiport)
 
 require('./server/api-express')(app, env, config)
 
-require('./server/api-routes')(app, express)
+require('./server/api-routes')(app, express, config)
 
 
 // 127.0.0.1限制本机访问，用于生产环境仅允许域名访问nginx跳转

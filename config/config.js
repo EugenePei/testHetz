@@ -4,14 +4,16 @@ export default {
 	name: 'HertzScaffold',
 
 	apiport: 8086,
-	redis: true,
+	auth:false,
+	redis: false,
 	rootPath: path.resolve(__dirname,'../'),
   	secret: 'HertzScaffold',
+  	USER_KEY:'HertzScaffold_UserKey',
 //数据库参数
 	db_type: 'mysql',
 	db_host: 'localhost',
 	db_username:'root',
-	db_password: 'Y4yhl9t!', 
+	db_password: '123456', 
 
 	db_database: 'dev',
 	db_post:3306,

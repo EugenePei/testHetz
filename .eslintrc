@@ -10,9 +10,22 @@
 	"import"
 	},
 	"rules":{
-	semi: 0,// 忽略分号警告,代码中无分号
-	comma-dangle:0, // 逗号缺失警告关掉
-	quotes:["error","single",{"allowTemplateLiterals":true}], // 同时允许单引号''和``
+	semi: 0,  #忽略分号警告,代码中无分号
+	comma-dangle:0, #逗号缺失警告关掉
+	padding-blocks:0,    # 规则限定代码块是否允许空行,为了代码可读性,不做强制要求
+
+	no-trailing-spaces:["error",{"skipBliankLines":true}],    # 规则默认禁止空行中带有空格,不要求，不然删死人
+
+	quotes:["error","single",{"allowTemplateLiterals":true}], # 同时允许单引号''和``
+	arrow-body-style:0,     # 要求箭头函数强制使用或强制不使用大括号。有些地方不用大括号换行阅读费劲
+
+	consistent-return: 0,     # 允许函数根据代码分支有不同的return行为
+	no-underscore-dangle:0,   # 规则禁止局部变量出现下划线这样的命名区分
+
+
+
+
+
 	import/no-extraneous-dependencies: ["error", {"devDependencies": true}], # 规则是禁止外部包使用,这里不禁止dev的
 
 
